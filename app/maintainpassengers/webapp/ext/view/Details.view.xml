@@ -1,0 +1,71 @@
+<mvc:View xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:macros="sap.fe.macros"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    controllerName="maintainpassengers.ext.view.Details"
+    modelContextChange="onModelContextChange">
+    <Page id="Details"
+        title="Details">
+        <headerContent>
+            <macros:FlexibleColumnLayoutActions />
+        </headerContent>
+        <content>
+
+            <VBox id="displayMode"
+                visible="{= !${ui>/isEditable} }"
+                class="sapUiSmallMargin">
+                <macros:Form id="generalForm"
+                    metaPath="@UI.FieldGroup#General"
+                    title="General" />
+                <macros:Form id="addressForm"
+                    metaPath="@UI.FieldGroup#Address"
+                    title="Address" />
+                <macros:Form id="contactDetailsForm"
+                    metaPath="@UI.FieldGroup#ContactDetails"
+                    title="Contact Details" />
+            </VBox>
+
+            <Wizard id="wizard"
+                finishButtonText="Save"
+                complete="onSavePress"
+                renderMode="Page"
+                visible="{ui>/isEditable}"
+                height="auto">
+
+                <WizardStep id="wizardStep1"
+                    title="General">
+                    <macros:Form metaPath="@UI.FieldGroup#WizardGeneral"
+                        id="wizardGeneralForm" />
+                </WizardStep>
+
+                <WizardStep id="wizardStep2"
+                    title="Address">
+                    <macros:Form metaPath="@UI.FieldGroup#WizardAddress"
+                        id="wizardAddressForm" />
+                </WizardStep>
+
+                <WizardStep id="wizardStep3"
+                    title="Contact Details">
+                    <macros:Form metaPath="@UI.FieldGroup#WizardContactDetails"
+                        id="wizardContactDetailsForm" />
+                </WizardStep>
+            </Wizard>
+
+            <Button id="editButton"
+                text="Edit"
+                press="onEditPress"
+                type="Emphasized"
+                class="sapUiSmallMarginBegin"
+                visible="{= !${ui>/isEditable} }"/>
+
+            <Button id="cancelButton"
+                text="Cancel"
+                press="onCancelPress"
+                type="Reject"
+                class="sapUiSmallMarginBegin"
+                visible="{ui>/isEditable}" />
+
+        </content>
+    </Page>
+</mvc:View>

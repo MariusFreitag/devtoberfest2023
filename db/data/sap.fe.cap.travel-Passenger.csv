@@ -1,0 +1,6 @@
+CustomerID;FirstName;LastName;Title;Street;PostalCode;City;CountryCode_code;PhoneNumber;EMailAddress
+000001;Johannes;Buchholm;Mr.;Muehltalstr. 14;68723;Schwetzingen;DE;+49-291-299232;johannes.buchholm@flight.example.de
+000002;Salvador;Fischmann;Mr.;Pza. Pablo Ruiz Picasso 75;08014;Barcelona;ES;+34-267-608201;salvador.fischmann@flight.example.es
+000003;Allen;Gutenberg;Mr.;Golden Gate Drive 64;07666;Teaneck;US;+1-461-048473;allen.gutenberg@flight.example.us
+000004;Sophie;Detemple;Mrs.;route de Pégomas 45;78140;Vélizy;FR;+33-413-794457;sophie.detemple@flight.example.fr
+000005;Adam;Illner;Mr.;Via Giulio Cesare 56;00195;Roma;IT;+39-688-553077;adam.illner@flight.example.it

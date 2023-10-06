@@ -1,0 +1,42 @@
+{
+  "name": "devtoberfest2023",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@prettier/plugin-xml": "^3.2.1",
+    "@sap/eslint-plugin-cds": "^2.6.3",
+    "@sap/cds-lsp": "^7.2.0",
+    "eslint": "^8.50.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "cds-plugin-ui5": "^0.2.1"
+  },
+  "scripts": {
+    "postinstall": "husky install || true",
+    "start": "cds-serve",
+    "lint": "eslint .",
+    "format": "prettier --write --ignore-unknown . && format-cds -f .",
+    "watch-maintainpassengers": "cds watch --open maintainpassengers/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*": "prettier --write --ignore-unknown",
+    "*cds": [
+      "cds lint",
+      "format-cds -f"
+    ]
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/maintainpassengers"
+  ]
+}
